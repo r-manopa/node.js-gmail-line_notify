@@ -13,6 +13,9 @@ class LineNotify {
         if(fs.existsSync(line_token)) {
             this.notify_token = require(line_token).notify;
         }
+        else {
+            throw Error(`File is "${line_token}" not found`);
+        }
     }
 
     sendMessage(message) {
